@@ -145,23 +145,25 @@ const eyeColor = {
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
 
-/*character = starWarsCharacters[i];
-switch (character.eye_color) {
-  case "blue":
-    eyeColor.blue.push(character);
-    break;
-  case "yellow":
-    eyeColor.yellow.push(character);
-    break;
-  case "brown":
-    eyeColor.brown.push(character);
-    break;
-  case "red":
-    eyeColor.red.push(character);
-    break;
-  case "blu-gray":
-    eyeColor["blue-gray"].push(character);
-    break;
+for (let i = 0; starWarsCharacters.length > i; i++) {
+  character = starWarsCharacters[i];
+  switch (character.eye_color) {
+    case "blue":
+      eyeColor.blue.push(character);
+      break;
+    case "yellow":
+      eyeColor.yellow.push(character);
+      break;
+    case "brown":
+      eyeColor.brown.push(character);
+      break;
+    case "red":
+      eyeColor.red.push(character);
+      break;
+    case "blue-gray":
+      eyeColor["blue-gray"].push(character);
+      break;
+  }
 }
 
 console.log(eyeColor);
@@ -172,6 +174,7 @@ let counter = 0;
 let crewMass = 0;
 while (counter < starWarsCharacters.length) {
   crewMass += starWarsCharacters[counter].mass;
+  counter++;
 }
 console.log(crewMass);
 /* ESERCIZIO 7
@@ -202,8 +205,11 @@ if (crewMass < 500) {
 for (i = 0; i < starWarsCharacters.length; i++) {
   character = starWarsCharacters[i];
   if (character.gender === "n/a") {
+    character.gender = "robot";
+    console.log(starWarsCharacters);
   }
 }
+
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
